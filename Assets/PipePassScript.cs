@@ -13,7 +13,10 @@ public class PipePassScript : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        logic.addScore();
+        if (collision.gameObject.tag == "Player")
+        {
+            logic.addScore(1);
+        }
     }
 
 }

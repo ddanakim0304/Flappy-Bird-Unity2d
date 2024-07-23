@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LogicScript : MonoBehaviour
 {
@@ -10,9 +11,14 @@ public class LogicScript : MonoBehaviour
     public TextMeshProUGUI scoreText;
 
     [ContextMenu("Score + 1")]
-    public void addScore()
+    public void addScore(int scoreToAdd)
     {
-       playerScore += 1;
+       playerScore += scoreToAdd;
        scoreText.text = playerScore.ToString();
+    }
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
