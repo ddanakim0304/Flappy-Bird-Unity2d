@@ -13,6 +13,7 @@ public class LogicScript : MonoBehaviour
 
     public GameObject bird;
     public BirdScript birdScript;
+    public AudioSource dingSFX;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class LogicScript : MonoBehaviour
        {
         playerScore += scoreToAdd;
         scoreText.text = playerScore.ToString();
+        dingSFX.Play();
        }
     }
 
